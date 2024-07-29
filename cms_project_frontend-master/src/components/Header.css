@@ -1,0 +1,139 @@
+/* index.css */
+
+/* Reset some basic elements */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+  color: #fff;
+}
+
+.header .logo a {
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.header .navbar {
+  display: flex;
+  align-items: center;
+}
+
+.header .nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.header .nav-item {
+  position: relative;
+}
+
+.header .nav-item a, .header .nav-item span {
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease;
+}
+
+.header .nav-item a:hover, .header .nav-item span:hover {
+  background-color: #444;
+  border-radius: 5px;
+}
+
+.header .dropdown {
+  display: inline-block;
+}
+
+.header .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #444;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.header .dropdown-menu li {
+  padding: 10px 20px;
+  white-space: nowrap;
+  color: #fff;
+}
+
+.header .dropdown-menu li:hover {
+  background-color: #555;
+}
+
+.header .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.header .dropdown-toggle::after {
+  content: ' ▼';
+  font-size: 0.8em;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header .navbar {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .header .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .header .nav-item a, .header .nav-item span {
+    width: 100%;
+    text-align: left;
+    padding: 10px 0;
+  }
+
+  .header .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border-radius: 0;
+  }
+}
+
+/* Mobile Menu Toggle Button */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .header .navbar {
+    display: none;
+  }
+
+  .header .navbar.active {
+    display: flex;
+  }
+}
